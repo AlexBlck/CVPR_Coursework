@@ -27,7 +27,7 @@ DATASET_FOLDER = '~/projects/Surrey/CVPR/coursework';
 DESCRIPTOR_FOLDER = '~/projects/Surrey/CVPR/coursework/descriptors';
 %% and within that folder, another folder to hold the descriptors
 %% we are interested in working with
-DESCRIPTOR_SUBFOLDER='globalRGBhisto';
+DESCRIPTOR_SUBFOLDER='gridRGB';
 
 
 %% 1) Load all the descriptors into "ALLFEAT"
@@ -68,7 +68,7 @@ dst=sortrows(dst,1);  % sort the results
 %% These may be a little hard to see using imgshow
 %% If you have access, try using imshow(outdisplay) or imagesc(outdisplay)
 
-SHOW=15; % Show top 15 results
+SHOW=7; % Show top 15 results
 dst=dst(1:SHOW,:);
 outdisplay=[];
 for i=1:size(dst,1)
@@ -77,5 +77,5 @@ for i=1:size(dst,1)
    img=img(1:81,:,:); % crop image to uniform size vertically (some MSVC images are different heights)
    outdisplay=[outdisplay img];
 end
-imgshow(outdisplay);
+imshow(outdisplay);
 axis off;

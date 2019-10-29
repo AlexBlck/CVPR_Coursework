@@ -26,6 +26,10 @@ for filenum=1:length(allfiles)
             F=extractRandom(img);
         case 'gridRGB'
             F=gridDescriptor(img, 8, 6);
+        case 'gridEdge'
+            F=gridEdge(img, 16, 12);
+        case 'gridEdgeRGB'
+            F=gridEdgeRGB(img, 20, 15);
     end
     save(fout, 'F');
     toc
